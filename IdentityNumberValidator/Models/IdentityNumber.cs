@@ -47,7 +47,6 @@ namespace IdentityNumberValidator.Models
             {
                 return new CoordinationNumber()
                 {
-                    ReallyOldPerson = identityNumber.Contains("+") || (onlyDigits.Length == 12 && onlyDigits.Substring(0, 4).GetCentury() < DateTime.Now.Year.ToString().GetCentury()),
                     RawNumberData = identityNumber,
                 };
             }
@@ -55,7 +54,6 @@ namespace IdentityNumberValidator.Models
             {
                 return new PersonalIdentityNumber()
                 {
-                    ReallyOldPerson = identityNumber.Contains("+") || (onlyDigits.Length == 12 && onlyDigits.Substring(0, 4).GetCentury() < DateTime.Now.Year.ToString().GetCentury()),
                     RawNumberData = identityNumber,
                 };
             }
