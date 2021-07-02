@@ -4,7 +4,7 @@ using System.IO;
 
 namespace IdentityNumberValidator
 {
-    class Program
+    class IdentityNumberValidator
     {
         static void Main(string[] args)
         {
