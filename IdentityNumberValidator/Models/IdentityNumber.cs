@@ -5,7 +5,7 @@ namespace IdentityNumberValidator.Models
 {
     public abstract class IdentityNumber
     {
-        public string NumberData { get { if (_numberData == null) _numberData = CalculateNumerData(); return _numberData; } }
+        public string NumberData { get { if (_numberData == null) _numberData = CalculateNumberData(); return _numberData; } }
         private string _numberData;
         public string RawNumberData { get { return _rawNumberData; } set { _rawNumberData = value; _checkSum = -1; _numberData = null; } }
         private string _rawNumberData;
@@ -58,7 +58,7 @@ namespace IdentityNumberValidator.Models
             }
         }
 
-        protected string CalculateNumerData()
+        protected string CalculateNumberData()
         {
             string onlyDigits = RawNumberData.Replace("-", "").Replace("+", "");
             return onlyDigits.Length == 10 ? onlyDigits : onlyDigits.Substring(2, 10);
